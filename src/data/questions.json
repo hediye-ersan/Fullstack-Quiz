@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "question": "What is a primary key?",
+    "answer": "A primary key is a unique identifier for each record in a database table."
+  },
+  {
+    "id": 2,
+    "question": "What is a closure in JavaScript?",
+    "answer": "A closure is a function having access to the parent scope, even after the parent function has closed."
+  },
+  {
+    "id": 3,
+    "question": "What is useState in React?",
+    "answer": "useState is a Hook that lets you add state to functional components."
+  }
+]
