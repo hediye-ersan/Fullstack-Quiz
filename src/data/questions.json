@@ -1,17 +1,803 @@
 [
-  {
-    "id": 1,
-    "question": "What is a primary key?",
-    "answer": "A primary key is a unique identifier for each record in a database table."
+    {
+        "id": 1,
+        "question": "Interface ve Abstract Class arasındaki fark nedir?",
+        "answer": "Interface, bir sınıfın hangi metotları içermesi gerektiğini tanımlarken, Abstract Class ise hem metot tanımları hem de bazı metotların implementasyonlarını içerebilir. Interface çoklu kalıtıma izin verirken, Abstract Class tek kalıtım sağlar."
+    },
+    {
+        "id": 2,
+        "question": "JavaScript'te veri tipleri nelerdir?",
+        "answer": "JavaScript'te veri tipleri şunlardır: Number, String, Boolean, Object, Array, Null, Undefined ve Symbol."
+    },
+    {
+        "id": 3,
+        "question": "React'te useState Hook'u nedir?",
+        "answer": "useState Hook'u, fonksiyonel bileşenlerde durum yönetimi için kullanılır. Bu Hook, bir durum değişkeni ve bu durumu güncellemek için bir fonksiyon döner."
+    },
+    {
+        "id": 4,
+        "question": "Function ve arrow function arasındaki fark nedir?",
+        "answer": "Function ifadeleri, kendi bağlamlarını oluştururken, arrow function'lar dış bağlamın this değerini korur. Ayrıca, arrow function'lar daha kısa bir sözdizimine sahiptir ve 'arguments' nesnesine erişemezler."
+    },
+    {
+        "id": 5,
+        "question": "Math kütüphanesi nedir? JavaScript'te hangi işlemleri yapar?",
+        "answer": "Math kütüphanesi, matematiksel işlemler için kullanılan yerleşik bir JavaScript nesnesidir. Bu kütüphane, trigonometrik fonksiyonlar, logaritmalar, üstel işlemler ve rastgele sayı üretimi gibi birçok matematiksel işlem sağlar."
+    },
+    {
+        "id": 6,
+        "question": "Math.round, Math.ceil ve Math.floor arasındaki fark nedir?",
+        "answer": "Math.round, bir sayıyı en yakın tam sayıya yuvarlar; Math.ceil, bir sayıyı bir üst tam sayıya yuvarlar; Math.floor ise bir sayıyı bir alt tam sayıya yuvarlar."
+    },
+    {
+        "id": 7,
+        "question": "JavaScript'te methodlar nasıl tanımlanır?",
+        "answer": "JavaScript'te methodlar, bir nesne içinde tanımlanan fonksiyonlardır. Methodlar, nesneye ait özelliklere erişebilir ve bu özellikleri değiştirebilir. Örneğin: `const obj = { methodName: function() { ... } };` veya `const obj = { methodName() { ... } };` şeklinde tanımlanabilir."
+    },
+    {
+        "id": 8,
+        "question": "While ve for döngüsü arasındaki fark nedir?",
+        "answer": "While döngüsü, belirli bir koşul doğru olduğu sürece çalışırken, for döngüsü genellikle belirli bir sayıda yineleme yapmak için kullanılır. While döngüsü, koşulun başlangıçta doğru olması gerektiği durumlarda tercih edilirken, for döngüsü genellikle sayısal iterasyonlar için kullanılır."
+    },
+    {
+        "id": 9,
+        "question": "Box model nedir?",
+        "answer": "Box model, HTML ve CSS'de her öğenin bir kutu olarak temsil edildiği bir konsepttir. Bu kutu, içerik alanı, padding (iç boşluk), border (kenarlık) ve margin (dış boşluk) olmak üzere dört ana bileşenden oluşur. Box model, öğelerin boyutlarını ve konumlarını belirlemek için kullanılır."
+    },
+    {
+        "id": 10,
+        "question": "CSS Flexbox nedir?",
+        "answer": "CSS Flexbox, öğeleri esnek bir şekilde düzenlemek için kullanılan bir CSS düzenleme modelidir. Flexbox, öğelerin boyutlarını ve konumlarını dinamik olarak ayarlayarak, farklı ekran boyutlarına ve yönlendirmelere uyum sağlamayı kolaylaştırır."
+    },
+    {
+        "id": 11,
+        "question": "CSS Grid nedir?",
+        "answer": "CSS Grid, iki boyutlu bir düzenleme sistemi sunan bir CSS özelliğidir. Grid, öğeleri satır ve sütunlara yerleştirerek karmaşık düzenler oluşturmayı mümkün kılar. Bu özellik, responsive tasarımlar için oldukça kullanışlıdır."
+    },
+    {
+        "id": 12,
+        "question": "JavaScript'te Promise nedir?",
+        "answer": "Promise, asenkron işlemlerin sonucunu temsil eden bir JavaScript nesnesidir. Bir Promise, henüz tamamlanmamış bir işlemi temsil eder ve bu işlem tamamlandığında ya başarılı (resolve) ya da başarısız (reject) olur."
+    },
+    {
+        "id": 13,
+        "question": "JavaScript'te async/await nedir?",
+        "answer": "async/await, asenkron kod yazmayı daha okunabilir hale getiren bir JavaScript özelliğidir. async fonksiyonlar, Promise döner ve await ifadesi, bir Promise'in çözülmesini bekler."
+    },
+    {
+        "id": 14,
+        "question": "JavaScript'te closure nedir?",
+        "answer": "Closure, bir fonksiyonun kendi kapsamı dışında tanımlanan değişkenlere erişebilmesini sağlayan bir JavaScript özelliğidir. Closure'lar, iç içe fonksiyonlar aracılığıyla oluşturulur ve dış fonksiyonun kapsamındaki değişkenlere erişim sağlar."
+    },
+    {
+        "id": 15,
+        "question": "JavaScript'te event nedir?",
+        "answer": "Event, kullanıcı etkileşimleri veya tarayıcı olayları gibi belirli durumlarda tetiklenen bir JavaScript nesnesidir. Örneğin, bir butona tıklama, bir formun gönderilmesi veya bir sayfanın yüklenmesi gibi olaylar event olarak kabul edilir. Event'ler, event listener'lar aracılığıyla dinlenebilir ve bu olaylara tepki verilebilir."
+    },
+    {
+        "id": 16,
+        "question": "JavaScript'te DOM nedir?",
+        "answer": "DOM (Document Object Model), HTML ve XML belgelerinin yapısını temsil eden bir modeldir. JavaScript, DOM'u kullanarak web sayfalarındaki öğeleri dinamik olarak değiştirebilir, ekleyebilir veya kaldırabilir."
+    },
+    {
+        "id": 17,
+        "question": "JavaScript'te localStorage nedir?",
+        "answer": "localStorage, tarayıcıda kalıcı veri depolamak için kullanılan bir JavaScript özelliğidir. localStorage, anahtar-değer çiftleri şeklinde veri saklar ve bu veriler tarayıcı kapatılsa bile kalıcıdır."
+    },
+    {
+        "id": 18,
+        "question": "JavaScript'te sessionStorage nedir?",
+        "answer": "sessionStorage, tarayıcı oturumu boyunca geçici veri depolamak için kullanılan bir JavaScript özelliğidir. sessionStorage, verileri sadece tarayıcı sekmesi açıkken saklar ve sekme kapatıldığında veriler silinir."
+    },
+    {
+        "id": 19,
+        "question": "JavaScript'te fetch API nedir?",
+        "answer": "fetch API, ağ istekleri yapmak için kullanılan modern bir JavaScript API'sidir. fetch, Promise tabanlıdır ve HTTP istekleri yaparak sunucudan veri almayı veya sunucuya veri göndermeyi sağlar."
+    },
+    {
+        "id": 20,
+        "question": "JavaScript'te JSON nedir?",
+        "answer": "JSON (JavaScript Object Notation), veri değişimi için kullanılan hafif bir veri formatıdır. JSON, JavaScript nesne söz dizimini kullanır ve hem insanlar hem de makineler tarafından kolayca okunabilir ve yazılabilir."
+    },
+    {
+        "id": 21,
+        "question": "JavaScript'te destructuring nedir?",
+        "answer": "Destructuring, bir nesne veya diziden değerleri kolayca çıkarmak için kullanılan bir JavaScript özelliğidir. Bu özellik, kodu daha okunabilir hale getirir ve değişken atamalarını basitleştirir."
+    },
+    {
+        "id": 22,
+        "question": "JavaScript'te spread operator nedir?",
+        "answer": "Spread operator (...) bir diziyi veya nesneyi genişletmek için kullanılır. Bu özellik, dizileri birleştirmek, kopyalamak veya nesneleri birleştirmek için oldukça kullanışlıdır."
+    },
+    {
+        "id": 23,
+        "question": "JavaScript'te rest parameter nedir?",
+        "answer": "Rest parameter (...args), bir fonksiyona değişken sayıda argüman geçmek için kullanılır. Bu özellik, fonksiyonun aldığı argümanları bir dizi olarak toplar."
+    },
+    {
+        "id": 24,
+        "question": "JavaScript'te template literals nedir?",
+        "answer": "Template literals, çok satırlı stringler ve string interpolasyonu için kullanılan bir JavaScript özelliğidir. Template literals, backtick (`) karakterleri ile tanımlanır ve ${} ifadesi ile değişkenler içerebilir."
+    },
+    {
+        "id": 25,
+        "question": "JavaScript'te modules nedir?",
+        "answer": "Modules, JavaScript kodunu modüler hale getirmek için kullanılan bir yapıdır. Modules, kodun daha düzenli ve yeniden kullanılabilir olmasını sağlar. ES6 ile birlikte gelen import ve export ifadeleri ile modüller arasında veri paylaşımı yapılabilir."
+    },
+    {
+        "id": 26,
+        "question": "JavaScript'te hoisting nedir?",
+        "answer": "Hoisting, JavaScript'te değişkenlerin ve fonksiyonların tanımlanmadan önce kullanılabilmesini sağlayan bir özelliktir. Değişkenler ve fonksiyonlar, kodun çalıştırılmasından önce üst kısma taşınır."
+    },
+    {
+        "id": 27,
+        "question": "JavaScript'te event delegation nedir?",
+        "answer": "Event delegation, bir olay dinleyicisini üst düzey bir öğeye ekleyerek alt öğelerdeki olayları yönetmeyi sağlayan bir tekniktir. Bu yöntem, performansı artırır ve daha az bellek kullanımı sağlar."
+    },
+    {
+        "id": 28,
+        "question": "JavaScript'te throttling ve debouncing nedir?",
+        "answer": "Throttling, belirli bir süre içinde yalnızca bir kez tetiklenen olayları kontrol ederken, debouncing, olayın tetiklenmesini geciktirerek son tetikleme zamanına göre çalışır. Throttling, sürekli olarak tetiklenen olayları sınırlar; debouncing ise hızlı tetiklenen olayları tek bir tetikleme ile sınırlar."
+    },
+    {
+        "id": 29,
+        "question": "JavaScript'te CORS nedir?",
+        "answer": "CORS (Cross-Origin Resource Sharing), farklı kaynaklardan gelen isteklerin güvenliğini sağlamak için kullanılan bir mekanizmadır. CORS, tarayıcıların farklı alan adlarından gelen istekleri nasıl yöneteceğini belirler."
+    },
+    {
+        "id": 30,
+        "question": "JavaScript'te service worker nedir?",
+        "answer": "Service worker, web uygulamalarının arka planda çalışan ve ağ isteklerini yakalayan bir JavaScript dosyasıdır. Service worker'lar, çevrimdışı çalışma, önbellekleme ve push bildirimleri gibi özellikleri destekler."
+    },
+    {
+        "id": 31,
+        "question": "JavaScript'te Virtual DOM nedir?",
+        "answer": "Virtual DOM, gerçek DOM'un hafif bir kopyasıdır ve React gibi kütüphaneler tarafından kullanılır. Virtual DOM, DOM manipülasyonlarını optimize ederek performansı artırır. Değişiklikler önce Virtual DOM üzerinde yapılır ve ardından gerçek DOM'a en az sayıda güncelleme ile yansıtılır."
+    },
+    {
+        "id": 32,
+        "question": "React'te useState Hook'u nedir?",
+        "answer": "useState Hook'u, fonksiyonel bileşenlerde durum yönetimi için kullanılır. Bu Hook, bir durum değişkeni ve bu durumu güncellemek için bir fonksiyon döner. Örneğin: `const [count, setCount] = useState(0);` şeklinde kullanılabilir."
+    },
+    {
+        "id": 33,
+        "question": "React'te useEffect Hook'u nedir ve nasıl kullanılır?",
+        "answer": "useEffect Hook'u, fonksiyonel bileşenlerde yan etkileri yönetmek için kullanılır. Bu Hook, bileşen render edildikten sonra çalışır ve veri çekme, abonelik oluşturma veya DOM manipülasyonu gibi işlemleri gerçekleştirmek için kullanılır. Örneğin: `useEffect(() => { // kod burada }, [dependencies]);` şeklinde kullanılabilir."
+    },
+    {
+        "id": 34,
+        "question": "React'te props nedir?",
+        "answer": "Props (properties), React bileşenlerine veri geçmek için kullanılan bir mekanizmadır. Props, bileşenlerin dışarıdan aldığı verileri temsil eder ve bileşenler arasında veri paylaşımını sağlar."
+    },
+    {
+        "id": 35,
+        "question": "React'te state nedir?",
+        "answer": "State, bir React bileşeninin iç durumunu temsil eder. State, bileşenin dinamik verilerini saklar ve bu veriler değiştiğinde bileşenin yeniden render edilmesini sağlar."
+    },
+    {
+        "id": 36,
+        "question": "React'te component lifecycle nedir?",
+        "answer": "Component lifecycle, bir React bileşeninin yaşam döngüsünü tanımlar. Bileşenler, mount (ekleme), update (güncelleme) ve unmount (kaldırma) aşamalarından geçer. Bu aşamalar, bileşenin nasıl davrandığını ve ne zaman güncellendiğini belirler."
+    },
+    {
+        "id": 37,
+        "question": "React'te controlled ve uncontrolled components nedir?",
+        "answer": "Controlled components, form elemanlarının değerlerinin React state'i tarafından kontrol edildiği bileşenlerdir. Uncontrolled components ise form elemanlarının değerlerinin DOM tarafından kontrol edildiği bileşenlerdir. Controlled components, form verilerini daha iyi yönetmeyi sağlar."
+    },
+    {
+        "id": 38,
+        "question": "React'te context API nedir?",
+        "answer": "Context API, React uygulamalarında global veri paylaşımını kolaylaştıran bir özelliktir. Context API, prop drilling (özelliklerin derinlemesine iletilmesi) sorununu çözer ve bileşenler arasında veri paylaşımını sağlar. Context, Provider ve Consumer bileşenleri ile oluşturulur."
+    },
+    {
+        "id": 39,
+        "question": "Redux nedir ve ne amaçla kullanılır?",
+        "answer": "Redux, JavaScript uygulamalarında durum yönetimini merkezi bir şekilde sağlamak için kullanılan bir kütüphanedir. Redux, uygulamanın tüm durumunu tek bir store'da saklar ve bileşenler arasında veri paylaşımını kolaylaştırır. Redux, özellikle büyük ve karmaşık uygulamalarda durum yönetimini daha öngörülebilir ve yönetilebilir hale getirir."
+    },
+    {
+        "id": 40,
+        "question": "Redux'ta action nedir?",
+        "answer": "Action, Redux uygulamalarında durumu değiştirmek için kullanılan bir JavaScript nesnesidir. Action, bir type özelliği ve isteğe bağlı olarak payload içerebilir. Action'lar, reducer'lara gönderilir ve bu sayede uygulamanın durumu güncellenir."
+    },
+    {
+        "id": 41,
+        "question": "Redux'ta reducer nedir?",
+        "answer": "Reducer, Redux uygulamalarında durumu güncellemek için kullanılan saf fonksiyonlardır. Reducer'lar, mevcut durumu ve bir action'ı alır ve yeni durumu döner. Reducer'lar, uygulamanın durumunu öngörülebilir bir şekilde yönetir."
+    },
+    {
+        "id": 42,
+        "question": "Redux'ta store nedir?",
+        "answer": "Store, Redux uygulamalarında tüm durumu saklayan merkezi bir nesnedir. Store, reducer'ları kullanarak durumu günceller ve bileşenlere durumu sağlar. Store, uygulamanın durumunu yönetmek için tek bir kaynak sağlar."
+    },
+    {
+        "id": 43,
+        "question": "Redux'ta middleware nedir?",
+        "answer": "Middleware, Redux uygulamalarında action'ların dispatch edilmeden önce veya sonra işlenmesini sağlayan fonksiyonlardır. Middleware'lar, asenkron işlemler, logging veya hata yakalama gibi işlemleri gerçekleştirmek için kullanılır."
+    },
+    {
+        "id": 44,
+        "question": "React Router nedir?",
+        "answer": "React Router, React uygulamalarında istemci tarafı yönlendirmesini sağlamak için kullanılan bir kütüphanedir. React Router, URL değişikliklerine tepki vererek bileşenleri dinamik olarak yükler ve kullanıcı deneyimini iyileştirir."
+    },
+    {
+        "id": 45,
+        "question": "React'te Higher Order Component (HOC) nedir?",
+        "answer": "Higher Order Component (HOC), bir bileşeni alıp ona yeni özellikler ekleyen bir fonksiyondur. HOC'lar, bileşenlerin yeniden kullanılabilirliğini artırır ve kodun daha modüler olmasını sağlar."
+    },
+    {
+        "id": 46,
+        "question": "React'te custom hooks nedir?",
+        "answer": "Custom hooks, React uygulamalarında tekrar kullanılabilir mantık parçalarını oluşturmak için kullanılan fonksiyonlardır. Custom hooks, useState veya useEffect gibi yerleşik hook'ları kullanarak özel mantıklar oluşturmayı sağlar. Bu sayede kodun daha modüler ve okunabilir olmasını sağlar."
+    },
+    {
+        "id": 47,
+        "question": "React'te error boundaries nedir?",
+        "answer": "Error boundaries, React uygulamalarında bileşen hatalarını yakalamak ve yönetmek için kullanılan özel bileşenlerdir. Error boundaries, bir bileşende hata oluştuğunda uygulamanın çökmesini önler ve kullanıcıya hata mesajı gösterir."
+    },
+    {
+        "id": 48,
+        "question": "React'te lazy loading nedir?",
+        "answer": "Lazy loading, React uygulamalarında bileşenlerin yalnızca ihtiyaç duyulduğunda yüklenmesini sağlayan bir tekniktir. Bu yöntem, başlangıç yükleme süresini azaltır ve performansı artırır. React'te lazy loading, React.lazy ve Suspense bileşenleri ile gerçekleştirilir."
+    },
+    {
+        "id": 49,
+        "question": "React'te portals nedir?",
+        "answer": "Portals, React uygulamalarında bileşenlerin DOM'un farklı bir bölümüne render edilmesini sağlayan bir özelliktir. Portals, modal pencereler veya tooltip'ler gibi bileşenlerin daha iyi yönetilmesini sağlar."
+    },
+    {
+        "id": 50,
+        "question": "React'te reconciliation nedir?",
+        "answer": "Reconciliation, React'in Virtual DOM'u kullanarak bileşenlerin nasıl güncellendiğini ve yeniden render edildiğini belirleyen bir süreçtir. React, Virtual DOM'da yapılan değişiklikleri gerçek DOM'a en az sayıda güncelleme ile yansıtarak performansı artırır."
+    },
+    {
+        "id": 51,
+        "question": "Dom elemanları nasıl seçilir?",
+        "answer": "DOM elemanları, JavaScript'te `document.querySelector()`, `document.getElementById()`, `document.getElementsByClassName()` veya `document.getElementsByTagName()` gibi yöntemlerle seçilebilir. Örneğin, `document.querySelector('.className')` ile belirli bir sınıfa sahip ilk öğe seçilebilir."
+    },
+    {
+        "id": 52,
+        "question": "JavaScript'te veri tipleri nasıl kontrol edilir?",
+        "answer": "JavaScript'te veri tiplerini kontrol etmek için `typeof` operatörü kullanılabilir. Örneğin, `typeof variable` ifadesi, `variable` değişkeninin veri tipini döner. Ayrıca, `Array.isArray()` ile bir değişkenin dizi olup olmadığı kontrol edilebilir."
+    },
+    {
+        "id": 53,
+        "question": "JavaScript'te hata yakalama nasıl yapılır?",
+        "answer": "JavaScript'te hata yakalama, `try...catch` bloğu kullanılarak yapılır. `try` bloğu içinde hata oluşabilecek kod yazılırken, `catch` bloğu bu hatayı yakalar ve işleme alır. Örneğin: `try { ... } catch (error) { console.error(error); }`."
+    },
+    {
+        "id": 54,
+        "question": "JavaScript'te asenkron işlemler nasıl yönetilir?",
+        "answer": "JavaScript'te asenkron işlemler, callback fonksiyonları, Promise'ler veya async/await yapıları kullanılarak yönetilir. Callback fonksiyonları, bir işlemin tamamlanmasını beklemek için kullanılırken, Promise'ler ve async/await yapıları daha okunabilir ve yönetilebilir bir asenkron kod yazmayı sağlar."
+    },
+    {
+        "id": 55,
+        "question": "Dom eventleri nasıl dinlenir?",
+        "answer": "DOM eventleri, `addEventListener` metodu kullanılarak dinlenir. Bu metod, bir DOM öğesine belirli bir olay türü için bir dinleyici (listener) ekler. Örneğin: `element.addEventListener('click', function() { ... });` ile bir öğeye tıklama olayını dinleyebilirsiniz."
+    },
+    {
+        "id": 56,
+        "question": "React'te component nedir?",
+        "answer": "React'te component, kullanıcı arayüzünü oluşturan ve yönetilen bağımsız bir bileşendir. Component'ler, JavaScript fonksiyonları veya sınıfları olarak tanımlanabilir ve props ve state gibi özellikleri kullanarak dinamik içerik oluşturabilir."
+    },
+    {
+        "id": 57,
+        "question": "Request ve Response nesneleri nedir?",
+        "answer": "Request ve Response nesneleri, HTTP istekleri ve yanıtlarını temsil eden JavaScript nesneleridir. Request nesnesi, istemciden sunucuya gönderilen verileri içerirken, Response nesnesi sunucudan istemciye dönen verileri içerir. Bu nesneler, fetch API veya XMLHttpRequest gibi yöntemlerle kullanılır."
+    },
+    {
+        "id": 58,
+        "question": "Props kavramı nedir?",
+        "answer": "Props (properties), bir component'e dışarıdan veri geçmek için kullanılan bir mekanizmadır. Props, component'lerin dışarıdan aldığı verileri temsil eder ve component'ler arasında veri paylaşımını sağlar. React'te props, component'lerin parametreleri olarak tanımlanır."
+    },
+    {
+        "id": 59,
+        "question": "React'te form elemanları nasıl yönetilir?",
+        "answer": "React'te form elemanları, controlled components kullanılarak yönetilir. Controlled components, form elemanlarının değerlerinin React state'i tarafından kontrol edildiği bileşenlerdir. Bu sayede form verileri daha iyi yönetilir ve güncellenir."
+    },
+    {
+        "id": 60,
+        "question": "React'te component'ler nasıl yeniden kullanılabilir hale getirilir?",
+        "answer": "React'te component'ler, props ve state kullanılarak yeniden kullanılabilir hale getirilebilir. Ayrıca, Higher Order Component (HOC) ve custom hooks gibi teknikler kullanılarak bileşenlerin mantığı modüler hale getirilebilir. Bu sayede kodun daha düzenli ve okunabilir olmasını sağlar."
+    },
+    {
+        "id": 61,
+        "question": "Request çeşitleri nelerdir ve ne amaçla kullanılır?",
+        "answer": "HTTP istekleri, farklı amaçlara hizmet eden çeşitli türlerde olabilir. En yaygın request çeşitleri şunlardır: GET (veri almak için), POST (veri göndermek için), PUT (var olan veriyi güncellemek için), DELETE (veriyi silmek için), PATCH (var olan verinin bir kısmını güncellemek için) ve OPTIONS (sunucunun desteklediği HTTP yöntemlerini sorgulamak için)."
+    },
+    {
+        "id": 62,
+        "question": "Http status kodları nelerdir ve ne anlama gelir?",
+        "answer": "HTTP status kodları, bir HTTP isteğine verilen yanıtın durumunu belirtir. En yaygın kullanılan kodlar şunlardır: 200 (OK - istek başarılı), 201 (Created - kaynak oluşturuldu), 204 (No Content - istek başarılı ancak içerik yok), 400 (Bad Request - istek hatalı), 401 (Unauthorized - yetkilendirme gerekli), 403 (Forbidden - erişim yasak), 404 (Not Found - kaynak bulunamadı), 500 (Internal Server Error - sunucu hatası)."
+    },
+    {
+        "id": 63,
+        "question": "JavaScript'te veri tipleri nasıl dönüştürülür?",
+        "answer": "JavaScript'te veri tipleri, `String()`, `Number()`, `Boolean()` gibi fonksiyonlar kullanılarak dönüştürülebilir. Ayrıca, `parseInt()` ve `parseFloat()` fonksiyonları sayısal değerleri stringlerden sayılara dönüştürmek için kullanılır. Örneğin: `const num = Number('123');` veya `const str = String(123);`."
+    },
+    {
+        "id": 64,
+        "question": "JavaScript'te dizi ve nesne nasıl oluşturulur?",
+        "answer": "JavaScript'te dizi, köşeli parantezler kullanılarak oluşturulur: `const arr = [1, 2, 3];`. Nesne ise süslü parantezler kullanılarak oluşturulur: `const obj = { key: 'value' };`."
+    },
+    {
+        "id": 65,
+        "question": "JavaScript'te fonksiyon nasıl tanımlanır?",
+        "answer": "JavaScript'te fonksiyon, `function` anahtar kelimesi ile tanımlanabilir: `function myFunction() { ... }`. Ayrıca, arrow function sözdizimi ile de tanımlanabilir: `const myFunction = () => { ... };`."
+    },
+    {
+        "id": 66,
+        "question": "JavaScript'te koşullu ifadeler nasıl kullanılır?",
+        "answer": "JavaScript'te koşullu ifadeler, `if`, `else if`, ve `else` anahtar kelimeleri kullanılarak yazılır. Örneğin: `if (condition) { ... } else if (anotherCondition) { ... } else { ... }`."
+    },
+    {
+        "id": 67,
+        "question": "JavaScript'te döngüler nasıl kullanılır?",
+        "answer": "JavaScript'te döngüler, `for`, `while`, ve `do...while` gibi yapılarla kullanılır. Örneğin: `for (let i = 0; i < 10; i++) { ... }` veya `while (condition) { ... }`."
+    },
+    {
+        "id": 68,
+        "question": "Axios nedir ve ne amaçla kullanılır?",
+        "answer": "Axios, tarayıcı ve Node.js ortamlarında HTTP istekleri yapmak için kullanılan popüler bir JavaScript kütüphanesidir. Axios, Promise tabanlıdır ve asenkron istekler yapmayı kolaylaştırır. Veri almak, göndermek veya silmek gibi işlemler için kullanılır."
+    },
+    {
+        "id": 69,
+        "question": "React nedir, ne amaçla kullanılır?",
+        "answer": "React, kullanıcı arayüzleri oluşturmak için kullanılan bir JavaScript kütüphanesidir. React, bileşen tabanlı mimarisi sayesinde dinamik ve etkileşimli web uygulamaları geliştirmeyi kolaylaştırır. Virtual DOM kullanarak performansı artırır ve bileşenlerin yeniden kullanılabilirliğini sağlar."
+    },
+    {
+        "id": 70,
+        "question": "React'ın kullandığı temel teknolojiler nelerdir?",
+        "answer": "React, temel olarak JavaScript, JSX, Virtual DOM ve bileşen tabanlı mimari gibi teknolojileri kullanır. JavaScript, React'in temel programlama dilidir; JSX, bileşenlerin görsel yapısını tanımlamak için kullanılır; Virtual DOM, performansı artırmak için gerçek DOM ile etkileşimde bulunur; bileşen tabanlı mimari ise uygulamaların modüler ve yeniden kullanılabilir olmasını sağlar."
+    },
+    {
+        "id": 71,
+        "question": "React'da Jsx kullanılmasının sebebi nedir?",
+        "answer": "JSX, JavaScript ve HTML benzeri bir sözdizimini birleştiren bir uzantıdır. React'da JSX kullanmanın sebebi, bileşenlerin görsel yapısını daha okunabilir ve yazılabilir hale getirmesidir. JSX, bileşenlerin nasıl görüneceğini tanımlarken, JavaScript koduyla etkileşimde bulunmayı kolaylaştırır. Bu sayede, kullanıcı arayüzü bileşenleri daha doğal bir şekilde oluşturulabilir."
+    },
+    {
+        "id": 72,
+        "question": "React'te useEffect Hook'un dependency array'i nedir?",
+        "answer": " useEffect Hook'un dependency array'i, Hook'un ne zaman çalışacağını belirleyen bir bağımlılık listesidir. Eğer bu liste boş bırakılırsa, useEffect sadece bileşen ilk kez render edildiğinde çalışır. Eğer listeye belirli değişkenler eklenirse, useEffect bu değişkenlerden herhangi biri değiştiğinde yeniden çalışır. Bu, performansı artırmak ve gereksiz yeniden render işlemlerini önlemek için kullanılır."
+    },
+    {
+        "id": 73,
+        "question": ".map() ve .filter() arasındaki fark nedir?",
+        "answer": ".map() metodu, bir dizinin her bir öğesini belirli bir işleme tabi tutarak yeni bir dizi oluşturur. .filter() metodu ise, bir dizinin öğelerini belirli bir koşula göre süzerek yeni bir dizi döner. Yani .map(), dönüşüm yaparken; .filter(), eleme işlemi yapar."
+    },
+    {
+        "id": 74,
+        "question": "Link ve NavLink ve <a> arasındaki fark nedir?",
+        "answer": "Link ve NavLink, React Router kütüphanesi tarafından sağlanan bileşenlerdir. Link, kullanıcıyı belirli bir yola yönlendirmek için kullanılırken, NavLink, aktif bağlantıyı vurgulamak için ek özellikler sunar. <a> etiketi ise HTML'de standart bir bağlantı oluşturur ve genellikle sayfa yenilemesi yapar. React Router ile kullanıldığında, Link ve NavLink, istemci tarafı yönlendirmesi sağlar ve sayfa yenilemesini önler."
+    },
+    {
+        "id": 75,
+        "question": "React'te useParams Hooku nedir?",
+        "answer": "useParams Hook'u, React Router kütüphanesi tarafından sağlanan bir Hook'tur. Bu Hook, URL parametrelerini almak için kullanılır. Örneğin, bir yol tanımlarken `:id` gibi dinamik parametreler kullanıldığında, useParams ile bu parametrelerin değerlerine erişilebilir. Bu sayede, bileşenler dinamik olarak URL parametrelerine göre güncellenebilir."
+    },
+    {
+        "id": 76,
+        "question": "React'te useHistory Hook'u nedir?",
+        "answer": "useHistory Hook'u, React Router kütüphanesi tarafından sağlanan bir Hook'tur. Bu Hook, tarayıcı geçmişini yönetmek için kullanılır. useHistory ile kullanıcıyı belirli bir yola yönlendirebilir, geçmişteki sayfalara geri dönebilir veya ileri gidebilirsiniz. Bu, kullanıcı deneyimini iyileştirmek ve uygulama içi gezinmeyi kolaylaştırmak için kullanılır."
+    },
+    {
+        "id": 77,
+        "question": "React'te useLocation Hook'u nedir?",
+        "answer": "useLocation Hook'u, React Router kütüphanesi tarafından sağlanan bir Hook'tur. Bu Hook, mevcut URL'nin konumunu almak için kullanılır. useLocation ile URL'nin pathname, search ve hash gibi bileşenlerine erişebilir ve bu bilgileri bileşenlerde kullanabilirsiniz. Bu, dinamik içerik oluşturmak ve kullanıcı etkileşimlerini yönetmek için faydalıdır."
+    },
+    {
+        "id": 78,
+        "question": "useContext Hook'u nedir?",
+        "answer": "useContext Hook'u, React uygulamalarında Context API'yi kullanarak global veriye erişmek için kullanılan bir Hook'tur. Bu Hook, belirli bir Context'in değerini alır ve bileşenlerde bu değeri kullanmayı sağlar. useContext, prop drilling sorununu çözer ve bileşenler arasında veri paylaşımını kolaylaştırır."
+    },
+    {
+        "id": 79,
+        "question": "React'te useReducer ve useContext arasındaki fark nedir?",
+        "answer": "useReducer, React uygulamalarında karmaşık durum yönetimini sağlamak için kullanılan bir Hook'tur. useContext ise Context API'yi kullanarak global veriye erişmeyi sağlar. useReducer, genellikle daha karmaşık durum güncellemeleri için kullanılırken, useContext, prop drilling sorununu çözmek ve bileşenler arasında veri paylaşımını kolaylaştırmak için kullanılır. İkisi birlikte kullanılarak, global durum yönetimi ve veri paylaşımı sağlanabilir."
+    },
+    {
+        "id": 80,
+        "question": "React'te useMemo ve useCallback arasındaki fark nedir?",
+        "answer": "useMemo, hesaplanmış değerleri önbelleğe almak için kullanılırken, useCallback, fonksiyonları önbelleğe almak için kullanılır. useMemo, belirli bir bağımlılık listesine göre hesaplanan değerleri saklar ve bu değerler değişmediği sürece yeniden hesaplanmaz. useCallback ise, belirli bir bağımlılık listesine göre fonksiyonları saklar ve bu fonksiyonlar değişmediği sürece yeniden oluşturulmaz. Bu, performansı artırmak ve gereksiz yeniden render işlemlerini önlemek için kullanılır."
+    },
+    {
+        "id": 81,
+        "question": "React'da key prop'unun önemi nedir?",
+        "answer": "Key prop'u, React'te liste öğelerini tanımlamak için kullanılan benzersiz bir kimliktir. Key prop'u, React'in hangi öğelerin değiştiğini, eklendiğini veya silindiğini anlamasına yardımcı olur. Bu, performansı artırır ve gereksiz yeniden render işlemlerini önler. Özellikle dinamik listeler oluştururken her öğeye benzersiz bir key atamak önemlidir."
+    },
+    {
+        "id": 82,
+        "question": "React hook form nedir ve ne amaçla kullanılır?",
+        "answer": "React Hook Form, React uygulamalarında form yönetimini kolaylaştıran bir kütüphanedir. Bu kütüphane, form verilerini yönetmek, doğrulama yapmak ve form durumunu takip etmek için kullanılır. React Hook Form, performansı artırmak için minimal yeniden render işlemleri yapar ve form bileşenlerini daha basit ve okunabilir hale getirir."
+    },
+    {
+        "id": 83,
+        "question": "React'te form elemanları nelerdir?",
+        "answer": "React'te form elemanları, kullanıcı etkileşimlerini yönetmek için kullanılan HTML form bileşenleridir. En yaygın form elemanları şunlardır: <input> (metin girişi, şifre, e-posta vb.), <textarea> (çok satırlı metin girişi), <select> (açılır menü), <button> (düğme), <checkbox> (onay kutusu) ve <radio> (radyo düğmesi). Bu elemanlar, React bileşenleri içinde controlled veya uncontrolled components olarak kullanılabilir."
+    },
+    {
+        "id": 84,
+        "question": "React'te form doğrulama nasıl yapılır?",
+        "answer": "React'te form doğrulama, form elemanlarının değerlerini kontrol etmek için çeşitli yöntemler kullanılarak yapılır. En yaygın yöntemler arasında, form elemanlarının onChange olayında değerlerin kontrol edilmesi, React Hook Form gibi kütüphanelerin kullanılması ve Yup gibi doğrulama şemalarının entegrasyonu bulunur. Bu sayede, kullanıcı girdileri doğrulanabilir ve hatalı girişler engellenebilir."
+    },
+    {
+        "id": 85,
+        "question": "React'te form submit işlemi nasıl yapılır?",
+        "answer": "React'te form submit işlemi, form elemanlarının onSubmit olayında bir fonksiyon tanımlanarak yapılır. Bu fonksiyon, form verilerini toplar, doğrular ve gerekli işlemleri gerçekleştirir. Örneğin: `<form onSubmit={handleSubmit}>...</form>` şeklinde kullanılabilir. Ayrıca, React Hook Form gibi kütüphaneler de form submit işlemlerini kolaylaştırır."
+    },
+    {
+        "id": 86,
+        "question": "Validasyon nedir ne için kullanılır?",
+        "answer": " Validasyon, kullanıcı girdilerinin belirli kurallara uygun olup olmadığını kontrol etmek için kullanılan bir süreçtir. React'da validasyon, form elemanlarının değerlerini doğrulamak, hatalı girişleri engellemek ve kullanıcı deneyimini iyileştirmek için kullanılır. Validasyon, genellikle onChange olayında veya form submit işlemi sırasında gerçekleştirilir ve kullanıcıya geri bildirim sağlanır."
+    },
+    {
+        "id": 87,
+        "question": "React'te form elemanlarının değerleri nasıl güncellenir?",
+        "answer": "React'te form elemanlarının değerleri, controlled components kullanılarak güncellenir. Controlled components, form elemanlarının değerlerinin React state'i tarafından kontrol edildiği bileşenlerdir. Bu sayede, form elemanlarının değerleri state ile senkronize edilir ve kullanıcı etkileşimlerine tepki verilir. Örneğin: `<input value={state.value} onChange={handleChange} />` şeklinde kullanılabilir."
+    },
+    {
+        "id": 88,
+        "question": "React'te form elemanlarının değerleri nasıl resetlenir?",
+        "answer": "React'te form elemanlarının değerleri, state'i sıfırlayarak veya form elemanlarının değerlerini boş bırakarak resetlenir. Örneğin, bir butona tıklandığında state'i başlangıç değerlerine ayarlamak için `setState(initialState)` kullanılabilir. Ayrıca, React Hook Form gibi kütüphaneler de form resetleme işlemlerini kolaylaştırır."
+    },
+    {
+        "id": 89,
+        "question": "Toastify nedir ve ne amaçla kullanılır?",
+        "answer": "Toastify, React uygulamalarında kullanıcıya bildirimler (toast mesajları) göstermek için kullanılan bir kütüphanedir. Bu kütüphane, kullanıcı etkileşimlerine tepki olarak kısa süreli bildirimler gösterir ve kullanıcı deneyimini iyileştirir. Toastify, özelleştirilebilir stiller ve konum seçenekleri sunar, böylece uygulama tasarımına uyum sağlar."
+    },
+    {
+        "id": 90,
+        "question": "React'da localstorage metodları nelerdir?",
+        "answer": "React'da localStorage, tarayıcıda kalıcı veri depolamak için kullanılan bir API'dir. En yaygın kullanılan metodlar şunlardır: `localStorage.setItem(key, value)` (veri eklemek için), `localStorage.getItem(key)` (veri almak için), `localStorage.removeItem(key)` (veri silmek için) ve `localStorage.clear()` (tüm verileri temizlemek için). Bu metodlar, uygulama durumunu tarayıcıda saklamak ve kullanıcı tercihlerini yönetmek için kullanılır."
+    },
+    {
+        "id": 91,
+        "question": "React'te test yazma yöntemleri nelerdir ve neden önemlidir?",
+        "answer": "React'te test yazma yöntemleri, bileşenlerin doğru çalıştığını ve beklenen davranışları sergilediğini doğrulamak için kullanılır. En yaygın test yazma yöntemleri şunlardır: birim testleri (unit tests), entegrasyon testleri (integration tests) ve uçtan uca testler (end-to-end tests). Test yazmak, kod kalitesini artırır, hataları erken aşamada tespit eder ve uygulamanın güvenilirliğini sağlar. Jest ve React Testing Library gibi araçlar, React uygulamalarında test yazmayı kolaylaştırır."
+    },
+    {
+        "id": 92,
+        "question": "React'te performans optimizasyonu nasıl yapılır?",
+        "answer": "React'te performans optimizasyonu, bileşenlerin gereksiz yeniden render edilmesini önlemek için çeşitli teknikler kullanılarak yapılır. En yaygın optimizasyon yöntemleri şunlardır: React.memo (bileşenleri hafızada tutmak için), useMemo (hesaplanmış değerleri önbelleğe almak için), useCallback (fonksiyonları önbelleğe almak için) ve lazy loading (bileşenleri ihtiyaç duyulduğunda yüklemek için). Ayrıca, Virtual DOM'un etkin kullanımı ve gereksiz DOM manipülasyonlarının önlenmesi de performansı artırır."
+    },
+    {
+        "id": 93,
+        "question": "JavaScript'te ımmutability nedir?",
+        "answer": "Immutability, bir nesnenin veya verinin değiştirilemez olduğunu ifade eder. JavaScript'te immutability, veri yapılarının değişmeden kalmasını sağlamak için kullanılır. Bu, özellikle fonksiyonel programlama paradigmasında önemlidir, çünkü immutability, yan etkileri azaltır ve kodun daha öngörülebilir olmasını sağlar. Örneğin, bir dizi veya nesne üzerinde yapılan işlemler yeni bir kopya oluşturarak orijinal veriyi değiştirmez."
+    },
+    {
+        "id": 94,
+        "question": "React'da Jsx kullanılmasının sebebi nedir?",
+        "answer": "JSX, JavaScript ve HTML benzeri bir sözdizimini birleştiren bir uzantıdır. React'da JSX kullanmanın sebebi, bileşenlerin görsel yapısını daha okunabilir ve yazılabilir hale getirmesidir. JSX, bileşenlerin nasıl görüneceğini tanımlarken, JavaScript koduyla etkileşimde bulunmayı kolaylaştırır. Bu sayede, kullanıcı arayüzü bileşenleri daha doğal bir şekilde oluşturulabilir."
+    },
+    {
+        "id": 95,
+        "question": "combineReducers nedir?",
+        "answer": "combineReducers, Redux uygulamalarında birden fazla reducer'ı tek bir reducer fonksiyonunda birleştirmek için kullanılan bir yardımcı fonksiyondur. Bu fonksiyon, her bir reducer'ın kendi durumunu yönetmesini sağlar ve tüm reducer'ların birleşik durumunu döner. Bu sayede, uygulamanın durum yönetimi daha modüler ve düzenli hale gelir. Örneğin: `const rootReducer = combineReducers({ user: userReducer, posts: postsReducer });`."
+    },
+    {
+        "id": 96,
+        "question": "TanStack Query nedir?",
+        "answer": "TanStack Query, React uygulamalarında veri çekme, önbellekleme ve senkronizasyon işlemlerini kolaylaştıran bir kütüphanedir. Bu kütüphane, asenkron veri yönetimini basit ve etkili bir şekilde yapmayı sağlar. TanStack Query, otomatik önbellekleme, yeniden sorgulama ve hata yönetimi gibi özellikler sunar, bu da geliştiricilerin veri çekme işlemlerini daha verimli hale getirir."
+    },
+    {
+        "id": 97,
+        "question": "Component State'den Global State(örn;Redux)'e ne zaman geçmek gerekir?",
+        "answer": "Component State'den Global State'e geçmek, uygulamanın durumunun birden fazla bileşen tarafından paylaşılması gerektiğinde veya durumun uygulama genelinde erişilebilir olması gerektiğinde yapılır. Örneğin, kullanıcı kimliği, tema ayarları veya dil tercihleri gibi veriler, birden fazla bileşende kullanılacaksa global state yönetimi (Redux, Context API gibi) tercih edilir. Bu, prop drilling sorununu çözer ve bileşenler arasında veri paylaşımını kolaylaştırır."
+    },
+    {
+        "id": 98,
+        "question": "React'da useContext ile useState arasındaki fark nedir?",
+        "answer": "useContext, React uygulamalarında global veriye erişmek için kullanılan bir Hook'tur. useState ise, bileşen içinde yerel durum yönetimi için kullanılır. useContext, prop drilling sorununu çözer ve bileşenler arasında veri paylaşımını kolaylaştırırken, useState, bileşenin kendi durumunu yönetir. useContext, genellikle global state yönetimi için kullanılırken, useState daha basit ve yerel durumlar için tercih edilir."
+    },
+    {
+        "id": 99,
+        "question": "JavaScript ile Java arasındaki temel farklar nelerdir?",
+        "answer": "JavaScript, dinamik, yorumlanan bir programlama dilidir ve genellikle web tarayıcılarında çalışırken; Java, statik, derlenen bir programlama dilidir ve genellikle sunucu tarafında veya masaüstü uygulamalarında kullanılır. JavaScript, prototip tabanlı bir nesne modeline sahipken, Java sınıf tabanlı bir nesne modeline sahiptir. Ayrıca, JavaScript asenkron programlamayı desteklerken, Java daha geleneksel senkron programlama yapısına sahiptir."
+    },
+    {
+    "id": 100,
+    "question": "Camel case, snake case ve kebab case arasındaki fark nedir?",
+    "answer": "Camel case, kelimelerin ilk harfi büyük olacak şekilde yazıldığı bir biçimdir (örneğin: `myVariableName`). Snake case, kelimeler arasında alt çizgi kullanılarak yazılır (örneğin: `my_variable_name`). Kebab case ise, kelimeler arasında tire kullanılarak yazılır (örneğin: `my-variable-name`). Bu biçimler, değişken adlandırma ve URL yapıları gibi farklı durumlarda kullanılır."
   },
-  {
-    "id": 2,
-    "question": "What is a closure in JavaScript?",
-    "answer": "A closure is a function having access to the parent scope, even after the parent function has closed."
-  },
-  {
-    "id": 3,
-    "question": "What is useState in React?",
-    "answer": "useState is a Hook that lets you add state to functional components."
-  }
+    {
+        "id": 101,
+        "question": "Java'da kapsülleme (encapsulation) nedir? Nasıl uygulanır",
+        "answer": "Kapsülleme (encapsulation), nesne yönelimli programlamada bir nesnenin verilerini ve davranışlarını bir arada tutma ilkesidir. Java'da kapsülleme, sınıf üyelerinin erişim belirleyicileri (private, protected, public) kullanılarak kontrol edilir. Veriler genellikle private olarak tanımlanır ve bu verilere erişim, public getter ve setter metodları aracılığıyla sağlanır. Bu sayede, nesnenin iç durumu dışarıdan doğrudan erişime kapatılır ve veri bütünlüğü korunur."
+    },
+    {
+        "id": 102,
+        "question": "Java'da kalıtım (inheritance) nedir? Nasıl uygulanır?",
+        "answer": "Kalıtım (inheritance), nesne yönelimli programlamada bir sınıfın başka bir sınıftan özellik ve davranışları devralmasıdır. Java'da kalıtım, `extends` anahtar kelimesi kullanılarak uygulanır. Bir sınıf, başka bir sınıfı genişleterek onun özelliklerini ve metodlarını miras alabilir. Bu sayede kod tekrarını azaltır ve daha modüler bir yapı oluşturur. Örneğin: `class Dog extends Animal { ... }` şeklinde bir sınıf tanımlanabilir."
+    },
+    {
+        "id": 103,
+        "question": "Java'da çok biçimlilik (polymorphism) nedir? Nasıl uygulanır?",
+        "answer": "Çok biçimlilik (polymorphism), nesne yönelimli programlamada bir nesnenin farklı şekillerde davranabilme yeteneğidir. Java'da çok biçimlilik, method overriding ve method overloading ile uygulanır. Method overriding, bir alt sınıfın üst sınıfın metodunu yeniden tanımlamasını sağlar. Method overloading ise aynı isimde farklı parametre listelerine sahip metodlar tanımlamayı mümkün kılar. Bu sayede, aynı isimli metodlar farklı davranışlar sergileyebilir."
+    },
+    {
+        "id": 104,
+        "question": "Java'da soyut sınıf (abstract class) nedir? Ne amaçla kullanılır?",
+        "answer": "Soyut sınıf (abstract class), nesne yönelimli programlamada tam olarak tanımlanmamış, ancak alt sınıflar tarafından genişletilmesi gereken bir sınıftır. Java'da soyut sınıflar, `abstract` anahtar kelimesi ile tanımlanır. Soyut sınıflar, ortak özellikleri ve davranışları tanımlamak için kullanılırken, alt sınıflar bu soyut sınıfı genişleterek somutlaştırabilir. Soyut sınıflar, genellikle bir şablon görevi görür ve alt sınıfların belirli metodları uygulamasını zorunlu kılar."
+    },
+    {
+        "id": 105,
+        "question": "Java'da arayüz (interface) nedir? Ne amaçla kullanılır?",
+        "answer": "Arayüz (interface), Java'da bir sınıfın uygulaması gereken metodların sözleşmesini tanımlar. Arayüzler, `interface` anahtar kelimesi ile tanımlanır ve sadece metod imzalarını içerir, gövde içermez. Arayüzler, çoklu kalıtımın sağlanması ve farklı sınıfların ortak davranışlarını tanımlamak için kullanılır. Bir sınıf, bir veya daha fazla arayüzü `implements` anahtar kelimesi ile uygulayabilir. Bu sayede, farklı sınıflar aynı arayüzü uygulayarak tutarlı bir davranış sergileyebilirler."
+    },
+    {
+        "id": 106,
+        "question": "Java abstract class ve interface arasındaki fark nedir?",
+        "answer": "Java'da abstract class ve interface, her ikisi de soyutlama sağlar, ancak farklı amaçlar için kullanılır. Abstract class, ortak özellikleri ve davranışları tanımlamak için kullanılırken, interface sadece metod imzalarını tanımlar ve sınıfların bu metodları uygulamasını zorunlu kılar. Abstract class, hem soyut hem de somut metodlar içerebilirken, interface sadece soyut metodlar içerir (Java 8 ve sonrası için default ve static metodlar hariç). Ayrıca, bir sınıf sadece bir abstract class'ı genişletebilirken, birden fazla interface'i uygulayabilir."
+    },
+    {
+        "id": 107,
+        "question": "Java overloading ve overriding arasındaki fark nedir?",
+        "answer": "Overloading, aynı isimde ancak farklı parametre listelerine sahip metodlar tanımlamayı mümkün kılar. Bu, metodların farklı veri tipleri veya sayıda parametre almasını sağlar. Örneğin, `void add(int a, int b)` ve `void add(double a, double b)` gibi. Overriding ise, bir alt sınıfın üst sınıfın metodunu yeniden tanımlamasını sağlar. Bu, alt sınıfın üst sınıfın davranışını değiştirmesine olanak tanır. Örneğin, `@Override public void display() { ... }` şeklinde bir metod tanımlanabilir."
+    },
+    {
+        "id": 108,
+        "question": "Java'da final anahtar kelimesi ne anlama gelir?",
+        "answer": "Java'da `final` anahtar kelimesi, bir değişkenin, metodun veya sınıfın değiştirilemez olduğunu belirtir. Final değişkenler, bir kez atandıktan sonra değeri değiştirilemez. Final metodlar, alt sınıflar tarafından override edilemez. Final sınıflar ise, başka sınıflar tarafından genişletilemez. Bu, kodun güvenliğini artırır ve belirli davranışların korunmasını sağlar."
+    },
+    {
+        "id": 109,
+        "question": "Java'da try-catch-finally blokları nedir?",
+        "answer": "Java'da `try-catch-finally` blokları, hata yönetimi için kullanılır. `try` bloğu, potansiyel olarak hata oluşturabilecek kodu içerir. Eğer bu kodda bir hata oluşursa, `catch` bloğu devreye girer ve hatayı yakalar. `finally` bloğu ise, hata oluşup oluşmadığına bakılmaksızın her zaman çalıştırılır ve genellikle kaynakların serbest bırakılması için kullanılır. Bu yapı, programın hatalardan etkilenmeden çalışmasını sağlar."
+    },
+    {
+        "id": 110,
+        "question": "Java'da exception handling nedir?",
+        "answer": "Exception handling (istisna yönetimi), Java'da programın çalışma sırasında oluşabilecek hataları yönetmek için kullanılan bir mekanizmadır. Java, istisnaları yakalamak ve işlemek için `try`, `catch`, `finally`, `throw` ve `throws` anahtar kelimelerini kullanır. Bu sayede, programın beklenmedik durumlarla karşılaştığında düzgün bir şekilde tepki vermesi sağlanır ve kullanıcı deneyimi iyileştirilir."
+    },
+    {
+        "id": 111,
+        "question": "Java veri türleri nelerdir?",
+        "answer": "Java'da veri türleri iki ana kategoriye ayrılır: ilkel (primitive) veri türleri ve referans (reference) veri türleri. İlkel veri türleri şunlardır: `int` (tam sayılar), `double` (ondalık sayılar), `char` (karakterler), `boolean` (doğru/yanlış değerler), `byte`, `short`, `long`, ve `float`. Referans veri türleri ise nesneleri temsil eder ve genellikle sınıflar, diziler ve arayüzler gibi yapıları içerir."
+    },
+    {
+        "id": 112,
+        "question": "Java'da diziler nasıl tanımlanır ve kullanılır?",
+        "answer": "Java'da diziler, sabit boyutlu veri yapılarıdır ve aynı türdeki öğeleri depolamak için kullanılır. Dizi tanımlamak için, veri türü ve köşeli parantezler kullanılır. Örneğin: `int[] numbers = new int[5];` ile 5 elemanlı bir tamsayı dizisi oluşturulur. Dizilere erişmek için indeksler kullanılır, örneğin: `numbers[0] = 10;`."
+    },
+    {
+        "id": 113,
+        "question": "Java'da koleksiyonlar nedir?",
+        "answer": "Koleksiyonlar, Java'da birden fazla öğeyi depolamak ve yönetmek için kullanılan veri yapılarıdır. Java Collections Framework, List (ArrayList, LinkedList), Set (HashSet, TreeSet) ve Map (HashMap, TreeMap) gibi çeşitli koleksiyon türlerini içerir. Koleksiyonlar, dinamik boyutlandırma, sıralama, arama ve filtreleme gibi işlemleri kolaylaştırır ve veri yönetimini daha verimli hale getirir."
+    },
+    {
+        "id": 114,
+        "question": "Java'da constructor nedir?",
+        "answer": "Constructor, Java'da bir sınıfın örneği oluşturulduğunda otomatik olarak çağrılan özel bir metoddur. Constructor, sınıfın başlangıç durumunu ayarlamak için kullanılır ve genellikle sınıfın özelliklerini başlatmak için parametreler alabilir. Constructor'ın adı, sınıfın adıyla aynı olmalıdır ve dönüş tipi yoktur. Örneğin: `public MyClass() { ... }`."
+    },
+    {
+        "id": 115,
+        "question": "Java'da methodlar nasıl tanımlanır?",
+        "answer": "Java'da methodlar, belirli bir işlevi yerine getiren kod bloklarıdır ve `return` tipi, method adı ve parametre listesi ile tanımlanır. Methodlar, sınıf içinde tanımlanır ve çağrıldıklarında belirli işlemleri gerçekleştirirler. Örneğin: `public int add(int a, int b) { return a + b; }`. Methodlar, parametre alabilir ve geri dönüş değeri döndürebilir."
+    },
+    {
+        "id": 116,
+        "question": "Java'da this() ve super() arasındaki fark nedir'?",
+        "answer": "`this()` ve `super()` Java'da özel anahtar kelimelerdir. `this()`, aynı sınıf içinde başka bir constructor'ı çağırmak için kullanılır ve genellikle constructor zincirlemesi yapmak için kullanılır. Örneğin: `this(param1, param2);`. `super()`, üst sınıfın constructor'ını çağırmak için kullanılır ve alt sınıfın üst sınıfın özelliklerini miras almasını sağlar. Örneğin: `super();` veya `super(param);`."
+    },
+    {
+        "id": 117,
+        "question": "Java'da erişim belirleyiciler nelerdir?",
+        "answer": "Java'da erişim belirleyiciler, sınıf üyelerinin (değişkenler ve metodlar) erişilebilirliğini kontrol etmek için kullanılır. En yaygın erişim belirleyiciler şunlardır: `public` (her yerden erişilebilir), `private` (sadece sınıf içinde erişilebilir), `protected` (aynı paket içindeki sınıflar ve alt sınıflar tarafından erişilebilir) ve `default` (hiçbir belirleyici belirtilmediğinde, aynı paket içindeki sınıflar tarafından erişilebilir). Bu belirleyiciler, kapsülleme ilkesini destekler ve veri güvenliğini artırır."
+    },
+    {
+        "id": 118,
+        "question": "Java'da static anahtar kelimesi ne anlama gelir?",
+        "answer": "`static` anahtar kelimesi, Java'da bir sınıfın üyesinin (değişken veya metod) sınıf düzeyinde olduğunu ve sınıfın örneği oluşturulmadan erişilebileceğini belirtir. Static üyeler, tüm sınıf örnekleri tarafından paylaşılır ve bellekte tek bir kopyası bulunur. Örneğin: `static int count;` veya `static void display() { ... }`. Static üyeler, genellikle yardımcı metodlar veya sabit değerler için kullanılır."
+    },
+    {
+        "id": 119,
+        "question": "Java'da garbage collection nedir?",
+        "answer": "Garbage collection (çöp toplama), Java'da kullanılmayan nesnelerin otomatik olarak bellekten temizlenmesi sürecidir. Java Virtual Machine (JVM), bellek yönetimini otomatik olarak yapar ve kullanılmayan nesneleri tespit ederek bellek alanını geri kazanır. Bu, geliştiricilerin bellek sızıntılarını önlemesine yardımcı olur ve uygulamanın performansını artırır. Garbage collection, genellikle arka planda çalışır ve geliştiricilerin manuel bellek yönetimi yapmasına gerek kalmaz."
+    },
+    {
+        "id": 120,
+        "question": "Java'da enum nedir?",
+        "answer": "Enum (enumeration), Java'da sabit değerlerin bir kümesini temsil eden özel bir veri türüdür. Enum, belirli bir grup sabit değeri tanımlamak için kullanılır ve bu değerler genellikle anlamlı isimlerle temsil edilir. Örneğin: `enum Day { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }`. Enum'lar, kodun okunabilirliğini artırır ve sabit değerlerin yönetimini kolaylaştırır."
+    },
+    {
+        "id": 121,
+        "question": "Java'da lambda ifadeleri nedir?",
+        "answer": "Lambda ifadeleri, Java 8 ile tanıtılan ve fonksiyonel programlama paradigmasını destekleyen bir özelliktir. Lambda ifadeleri, anonim fonksiyonlar olarak da bilinir ve genellikle bir arayüzün tek bir metodunu uygulamak için kullanılır. Örneğin: `(a, b) -> a + b` ifadesi, iki sayıyı toplayan bir lambda ifadesidir. Lambda ifadeleri, kodun daha kısa ve okunabilir olmasını sağlar ve özellikle koleksiyonlar üzerinde işlem yaparken kullanışlıdır."
+    },
+    {
+        "id": 122,
+        "question": "Nesne yönelimli bir kod yazarken nelere dikkat etmeliyiz?",
+        "answer": "Nesne yönelimli bir kod yazarken dikkat edilmesi gereken bazı önemli noktalar şunlardır: kapsülleme (encapsulation) ilkesine uygun olarak verileri gizlemek, kalıtım (inheritance) ile kod tekrarını azaltmak, çok biçimlilik (polymorphism) ile esnek ve genişletilebilir kodlar yazmak, soyutlama (abstraction) ile karmaşıklığı azaltmak, ve iyi bir tasarım prensiplerine (SOLID prensipleri gibi) uymak. Ayrıca, kodun okunabilirliğini artırmak için anlamlı isimlendirme, yorum satırları ve düzenli yapı kullanmak da önemlidir."
+    },
+    {
+        "id": 123,
+        "question": "Java'da final, finally ve finalize arasındaki fark nedir?",
+        "answer": "`final`, bir değişkenin, metodun veya sınıfın değiştirilemez olduğunu belirtirken; `finally`, try-catch bloklarında her zaman çalıştırılacak kod bloğunu tanımlar. `finalize` ise, bir nesne çöp toplama işlemi sırasında çağrılan özel bir metoddur ve genellikle kaynakları serbest bırakmak için kullanılır. Özetle, `final` değişkenleri korurken, `finally` hata yönetimi sağlar ve `finalize` nesne yaşam döngüsünde temizlik işlemleri yapar."
+    },
+    {
+        "id": 124,
+        "question": "Microservice ve monolithic mimari arasındaki fark nedir?",
+        "answer": "Microservice mimarisi, uygulamanın küçük, bağımsız ve ölçeklenebilir hizmetlere bölünmesi prensibine dayanırken; monolithic mimari, tüm uygulamanın tek bir bütün olarak geliştirilmesi ve dağıtılmasıdır. Microservice mimarisi, her hizmetin kendi veritabanına sahip olmasını ve farklı teknolojilerle geliştirilebilmesini sağlar. Monolithic mimari ise, tüm bileşenlerin tek bir kod tabanında yer alması nedeniyle daha basit bir yapı sunar ancak ölçeklenebilirlik ve bakım zorluğu gibi dezavantajları vardır."
+    },
+    {
+        "id": 125,
+        "question": "Css'de bir elemanın gölgesi nasıl verilir?",
+        "answer": "CSS'de bir elemanın gölgesini vermek için `box-shadow` özelliği kullanılır. Bu özellik, elemanın etrafında bir gölge oluşturur ve şu şekilde tanımlanır: `box-shadow: [h-offset] [v-offset] [blur-radius] [spread-radius] [color];`. Örneğin: `box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);` ifadesi, elemanın sağa ve aşağıya doğru 2 piksel kaydırılmış, 5 piksel bulanıklaştırılmış ve yarı saydam siyah bir gölge oluşturur."
+    },
+    {
+        "id": 126,
+        "question": "CQRS design pattern nedir?",
+        "answer": "CQRS (Command Query Responsibility Segregation), komut ve sorgu işlemlerini ayıran bir tasarım desenidir. Bu desen, veri yazma (komut) ve veri okuma (sorgu) işlemlerini farklı modellerle yönetmeyi amaçlar. CQRS, sistemin ölçeklenebilirliğini artırır, karmaşıklığı azaltır ve performansı iyileştirir. Komutlar, veriyi değiştiren işlemleri temsil ederken; sorgular, veriyi okuyan işlemleri temsil eder. Bu sayede, her iki işlem türü için ayrı optimizasyonlar yapılabilir."
+    },
+    {
+        "id": 127,
+        "question": "Css'de yazının rengini değiştirmek ve yazıyı ortalamak için hangi kodlar kullanılır?",
+        "answer": "Yazının rengini değiştirmek için `color` özelliği kullanılır ve yazıyı ortalamak için `text-align` özelliği kullanılır. Örneğin: `color: red;` yazının rengini kırmızı yapar ve `text-align: center;` yazıyı ortalar. Bu kodlar, bir CSS sınıfında veya doğrudan HTML etiketinde kullanılabilir."
+    },
+    {
+        "id": 128,
+        "question": "JavaScripte veri tipleri nelerdir?",
+        "answer": "JavaScript'te veri tipleri şunlardır: Number, String, Boolean, Object, Array, Null, Undefined ve Symbol."
+    },
+    {
+        "id": 129,
+        "question": "Ract'da hangi eventler vardır?",
+        "answer": "React'te en yaygın kullanılan eventler şunlardır: onClick, onChange, onSubmit, onMouseEnter, onMouseLeave, onKeyDown, onKeyUp, onFocus, onBlur, onLoad, onError ve onScroll. Bu eventler, kullanıcı etkileşimlerini yönetmek için kullanılır ve bileşenlerin davranışlarını kontrol eder."
+    },
+    {
+        "id": 130,
+        "question": "Java'da pointerlar neden kullanılmaz?",
+        "answer": "Java'da pointerlar kullanılmaz çünkü Java, bellek yönetimini otomatik olarak yapar ve güvenlik açısından pointer kullanımını engeller. Java, referans tipleri kullanarak nesnelere erişir ve bu sayede bellek sızıntılarını önler. Pointerlar, bellek adreslerine doğrudan erişim sağladığı için güvenlik açıklarına neden olabilir ve bu nedenle Java, referans tabanlı bir model kullanır."
+    },
+    {
+        "id": 131,
+        "question": "Bir HTML elemanını JavaScript kullanarak nasıl seçebilirsin?",
+        "answer": "Bir HTML elemanını JavaScript kullanarak seçmek için `document.querySelector()` veya `document.getElementById()` gibi yöntemler kullanılabilir. Örneğin, bir sınıf adıyla elemanı seçmek için `document.querySelector('.className')` veya bir ID ile elemanı seçmek için `document.getElementById('elementId')` kullanılabilir. Bu yöntemler, DOM'daki belirli elemanlara erişim sağlar ve bu elemanlar üzerinde işlemler yapmayı mümkün kılar."
+    },
+    {
+        "id": 132,
+        "question": "3 ayrı API'ye istek atılacak hepsinden de eş zamanlı cevap almak için hangi yöntemleri kullanabilirsin?",
+        "answer": "3 ayrı API'ye eş zamanlı istek atmak için JavaScript'te `Promise.all()` yöntemi kullanılabilir. Bu yöntem, birden fazla Promise'i aynı anda çalıştırır ve tüm isteklerin tamamlanmasını bekler. Örneğin: \n\n```javascript\nPromise.all([\n  fetch('api1'),\n  fetch('api2'),\n  fetch('api3')\n]).then(responses => {\n  // Tüm API cevaplarını işleme al\n});\n```\n\nBu sayede, tüm API'lerden gelen cevaplar eş zamanlı olarak alınabilir."
+    },
+    {
+        "id": 133,
+        "question": "İlişkisel ve NoSQL veritabanları arasındaki fark nedir?",
+        "answer": "İlişkisel veritabanları, verileri tablolar halinde düzenler ve bu tablolar arasındaki ilişkileri tanımlar. SQL (Structured Query Language) kullanarak veriler üzerinde sorgulama yapılır. NoSQL veritabanları ise, esnek veri modelleri sunar ve genellikle belge, anahtar-değer, sütun veya grafik tabanlı yapılar kullanır. NoSQL veritabanları, ölçeklenebilirlik ve performans açısından avantajlar sunar ve genellikle büyük veri uygulamalarında tercih edilir."
+    },
+    {
+        "id": 134,
+        "question": "JavaScript'te asenkron programlama nedir?",
+        "answer": "Asenkron programlama, JavaScript'te uzun süren işlemlerin (örneğin, API istekleri) ana iş parçacığını engellemeden gerçekleştirilmesini sağlar. Bu, kullanıcı arayüzünün donmamasını ve uygulamanın daha akıcı çalışmasını sağlar. Asenkron programlama, `setTimeout`, `setInterval`, `Promise`, `async/await` gibi yapılar kullanılarak gerçekleştirilir. Bu sayede, işlemler tamamlandığında geri çağırma fonksiyonları veya Promise zincirleri ile sonuçlar işlenebilir."
+    },
+    {
+        "id": 135,
+        "question": "Java'da polymorphism'in sağladığı avantajlar nelerdir?",
+        "answer": "Polymorphism, Java'da kodun daha esnek ve genişletilebilir olmasını sağlar. Bu sayede, aynı isimdeki metodlar farklı sınıflarda farklı davranışlar sergileyebilir. Polymorphism, kod tekrarını azaltır, bakım ve test süreçlerini kolaylaştırır. Ayrıca, yeni sınıflar eklenirken mevcut kodun değiştirilmesine gerek kalmadan genişletilebilirlik sağlar. Örneğin, bir üst sınıfın referansını kullanarak alt sınıfların nesneleri üzerinde işlem yapabiliriz."
+    },
+    {
+        "id": 136,
+        "question": "List, Set ve Map arasındaki fark nedir?",
+        "answer": "List, Set ve Map, Java Collections Framework'ün üç temel koleksiyon türüdür. List, sıralı ve tekrarlı öğeleri depolayan bir koleksiyondur (örneğin, ArrayList). Set, benzersiz öğeleri depolayan ve tekrarı engelleyen bir koleksiyondur (örneğin, HashSet). Map ise anahtar-değer çiftlerini depolayan bir koleksiyondur ve her anahtar benzersizdir (örneğin, HashMap). Bu koleksiyonlar, farklı veri yapıları ve erişim yöntemleri sunar."
+    },
+    {
+        "id": 137,
+        "question": "Java'da hashMap, linkedHashMap ve treeMap arasındaki fark nedir?",
+        "answer": "HashMap, anahtar-değer çiftlerini depolayan ve hızlı erişim sağlayan bir koleksiyondur. LinkedHashMap, HashMap'in sıralı versiyonudur ve ekleme sırasını korur. TreeMap ise, anahtarları doğal sıralarına göre düzenleyen ve sıralı erişim sağlayan bir koleksiyondur. HashMap, en hızlı erişimi sağlarken; LinkedHashMap ve TreeMap, sıralama özellikleri nedeniyle biraz daha yavaştır. Bu koleksiyonlar, farklı kullanım senaryolarına göre tercih edilir."
+    },
+    {
+        "id": 138,
+        "question": "ArrayList, LinkedList arasındaki fark nedir?",
+        "answer": "ArrayList, dinamik boyutlu bir dizi yapısıdır ve elemanlara indeks numarası ile hızlı erişim sağlar. LinkedList ise, düğümlerden oluşan bir zincir yapısıdır ve eleman ekleme/çıkarma işlemlerinde daha iyi performans gösterir. ArrayList, bellekte ardışık olarak depolanırken; LinkedList, her düğümün bir sonraki ve önceki düğüme referans içerdiği için daha fazla bellek kullanır. ArrayList, okuma işlemlerinde daha hızlı iken; LinkedList, ekleme ve silme işlemlerinde daha avantajlıdır."
+    },
+    {
+        "id": 139,
+        "question": "HashSet ve TreeSet arasındaki fark nedir?",
+        "answer": "HashSet, benzersiz öğeleri depolayan ve hızlı erişim sağlayan bir koleksiyondur. Öğeler, hash tabanlı bir yapıda depolanır ve sıralama özelliği yoktur. TreeSet ise, öğeleri doğal sıralarına göre düzenleyen ve sıralı erişim sağlayan bir koleksiyondur. TreeSet, ağaç tabanlı bir yapıya sahiptir ve bu nedenle ekleme/silme işlemleri daha yavaştır. HashSet, performans açısından daha hızlı iken; TreeSet, sıralama özelliği nedeniyle tercih edilir."
+    },
+    {
+        "id": 140,
+        "question": "HashMap null key ve value kabul eder mi?",
+        "answer": "Evet, HashMap null key ve value kabul eder. Ancak, sadece bir adet null key olabilir ve birden fazla null value depolanabilir. Bu, HashMap'in esnekliğini artırır ve farklı veri senaryolarında kullanılmasını sağlar. Örneğin: `HashMap<String, String> map = new HashMap<>(); map.put(null, \"value\"); map.put(\"key\", null);` şeklinde kullanılabilir."
+    },
+    {
+        "id": 141,
+        "question": "Java'da String, StringBuilder ve StringBuffer arasındaki fark nedir?",
+        "answer": "String, Java'da değiştirilemez (immutable) bir veri tipidir ve her değişiklikte yeni bir nesne oluşturur. StringBuilder ve StringBuffer ise, değiştirilebilir (mutable) veri tipleridir. StringBuilder, tek iş parçacıklı uygulamalar için daha hızlıdır ve senkronizasyon gerektirmez. StringBuffer ise, çok iş parçacıklı uygulamalar için senkronize edilmiştir ve bu nedenle daha güvenlidir ancak performansı daha düşüktür. Genellikle, performans açısından StringBuilder tercih edilir."
+    },
+    {
+        "id": 143,
+        "question": "Java'da method overloading nedir?",
+        "answer": "Method overloading, Java'da aynı isimde ancak farklı parametre listelerine sahip metodlar tanımlamayı mümkün kılar. Bu, metodların farklı veri tipleri veya sayıda parametre almasını sağlar. Method overloading, kodun okunabilirliğini artırır ve aynı işlemi farklı şekillerde gerçekleştirmeyi sağlar. Örneğin: `public void add(int a, int b) { ... }` ve `public void add(double a, double b) { ... }` gibi."
+    },
+    {
+        "id": 144,
+        "question": "Java'da method overriding nedir?",
+        "answer": "Method overriding, Java'da bir alt sınıfın üst sınıfın metodunu yeniden tanımlamasını sağlar. Bu, alt sınıfın üst sınıfın davranışını değiştirmesine olanak tanır. Method overriding, `@Override` anotasyonu ile belirtilir ve alt sınıfın üst sınıfın metodunu geçersiz kılmasını sağlar. Bu sayede, polymorphism özelliği kullanılarak farklı sınıfların aynı isimdeki metodları farklı şekillerde davranabilir. Örneğin: `@Override public void display() { ... }`."
+    },
+    {
+        "id": 145,
+        "question": "Java'da exception handling nedir?",
+        "answer": "Exception handling (istisna yönetimi), Java'da programın çalışma sırasında oluşabilecek hataları yönetmek için kullanılan bir mekanizmadır. Java, istisnaları yakalamak ve işlemek için `try`, `catch`, `finally`, `throw` ve `throws` anahtar kelimelerini kullanır. Bu sayede, programın beklenmedik durumlarla karşılaştığında düzgün bir şekilde tepki vermesi sağlanır ve kullanıcı deneyimi iyileştirilir."
+    },
+    {
+        "id": 146,
+        "question": "ArrayList mi daha hızlıdır, LinkedList mi? Hangi durumlarda?",
+        "answer": "ArrayList, elemanlara indeks numarası ile erişim sağladığı için okuma işlemlerinde daha hızlıdır. Ancak, eleman ekleme ve silme işlemleri ArrayList'te daha yavaştır çünkü elemanların kaydırılması gerekir. LinkedList ise, eleman ekleme ve silme işlemlerinde daha hızlıdır çünkü düğümler arasında bağlantılar değiştirilebilir. Bu nedenle, ArrayList okuma işlemleri için, LinkedList ise ekleme/silme işlemleri için daha uygundur."
+    },
+    {
+        "id": 147,
+        "question": "Checked ve Unchecked exception arasındaki fark nedir?",
+        "answer": "Checked exception, derleme zamanında kontrol edilen ve programın düzgün çalışması için ele alınması gereken istisnalardır. Örneğin, IOException gibi. Unchecked exception ise, çalışma zamanında oluşan ve genellikle program hatalarından kaynaklanan istisnalardır. Örneğin, NullPointerException gibi. Checked exception'lar, `try-catch` blokları ile ele alınmalı veya `throws` anahtar kelimesi ile bildirilmeli; Unchecked exception'lar ise genellikle programın mantıksal hatalarından kaynaklandığı için ele alınması zorunlu değildir."
+    },
+    {
+        "id": 148,
+        "question": "Java'da final, finally ve finalize arasındaki fark nedir?",
+        "answer": "`final`, bir değişkenin, metodun veya sınıfın değiştirilemez olduğunu belirtirken; `finally`, try-catch bloklarında her zaman çalıştırılacak kod bloğunu tanımlar. `finalize` ise, bir nesne çöp toplama işlemi sırasında çağrılan özel bir metoddur ve genellikle kaynakları serbest bırakmak için kullanılır. Özetle, `final` değişkenleri korurken, `finally` hata yönetimi sağlar ve `finalize` nesne yaşam döngüsünde temizlik işlemleri yapar."
+    },
+    {
+        "id": 149,
+        "question": "try-catch-finally bloğu nasıl çalışır? finally bloğu her zaman çalışır mı?",
+        "answer": "`try-catch-finally` bloğu, Java'da hata yönetimi için kullanılır. `try` bloğu, potansiyel olarak hata oluşturabilecek kodu içerir. Eğer bu kodda bir hata oluşursa, `catch` bloğu devreye girer ve hatayı yakalar. `finally` bloğu ise, hata oluşup oluşmadığına bakılmaksızın her zaman çalıştırılır. Bu, genellikle kaynakların serbest bırakılması veya temizlik işlemleri için kullanılır. Yani, `finally` bloğu her durumda çalışır."
+    },
+    {
+        "id": 150,
+        "question": "throw ve throws arasındaki fark nedir?",
+        "answer": "`throw`, bir istisna nesnesini manuel olarak fırlatmak için kullanılırken; `throws`, bir metodun belirli bir istisnayı fırlatabileceğini belirtmek için kullanılır. `throw` ifadesi, bir istisna nesnesi oluşturur ve onu yakalayan bir `catch` bloğuna iletir. Örneğin: `throw new Exception(\"Hata mesajı\");`. `throws` ise, metod imzasında belirtilir ve bu metodun çağrıldığı yerde istisnanın ele alınması gerektiğini gösterir. Örneğin: `public void myMethod() throws IOException { ... }`."
+    },
+    {
+        "id": 151,
+        "question": "Java'da Spring Boot uygulamasında bir bean nasıl enjekte edilir?",
+        "answer": "Java'da Spring Boot uygulamasında bir bean enjekte etmek için `@Autowired` anotasyonu kullanılır. Bu anotasyon, Spring'in bağımlılık enjeksiyonunu otomatik olarak gerçekleştirmesini sağlar. Örneğin, bir servis sınıfını bir kontrolcüde enjekte etmek için şu şekilde kullanılabilir: \n\n```java\n@RestController\npublic class MyController {\n    @Autowired\n    private MyService myService;\n\n    // ... diğer metodlar\n}\n```\n\nBu sayede, `myService` bean'i otomatik olarak enjekte edilir ve kullanılabilir hale gelir."
+    },
+    {
+        "id": 152,
+        "question": "Java'da Spring Boot uygulamasında RESTful API nasıl oluşturulur?",
+        "answer": "Java'da Spring Boot uygulamasında RESTful API oluşturmak için `@RestController` anotasyonu kullanılır. Bu anotasyon, sınıfın bir REST kontrolcüsü olduğunu belirtir. HTTP isteklerini işlemek için `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping` gibi anotasyonlar kullanılır. Örneğin: \n\n```java\n@RestController\n@RequestMapping(\"/api\")\npublic class MyApiController {\n    @GetMapping(\"/items\")\n    public List<Item> getItems() { ... }\n\n    @PostMapping(\"/items\")\n    public Item createItem(@RequestBody Item item) { ... }\n}\n```\n\nBu sayede, HTTP istekleri ile etkileşimde bulunarak RESTful API oluşturulabilir."
+    },
+    {
+        "id": 153,
+        "question": "Java'da Spring Boot uygulamasında veri tabanı bağlantısı nasıl yapılır?",
+        "answer": "Java'da Spring Boot uygulamasında veri tabanı bağlantısı yapmak için `application.properties` veya `application.yml` dosyasında veri tabanı yapılandırması yapılır. Örneğin, bir MySQL veri tabanı için şu şekilde yapılandırma yapılabilir: \n\n```properties\nspring.datasource.url=jdbc:mysql://localhost:3306/mydb\nspring.datasource.username=root\nspring.datasource.password=password\nspring.jpa.hibernate.ddl-auto=update\n```\n\nDaha sonra, `@Entity` anotasyonu ile tanımlanan sınıflar ve `JpaRepository` arayüzü kullanılarak veri tabanı işlemleri gerçekleştirilebilir."
+    },
+    {
+        "id": 154,
+        "question": "Java'da Spring Boot uygulamasında güvenlik nasıl sağlanır?",
+        "answer": "Java'da Spring Boot uygulamasında güvenlik sağlamak için Spring Security kullanılır. Spring Security, kimlik doğrulama ve yetkilendirme işlemlerini yönetir. Güvenlik yapılandırması için `@EnableWebSecurity` anotasyonu ile bir güvenlik yapılandırma sınıfı oluşturulur. Örneğin: \n\n```java\n@Configuration\n@EnableWebSecurity\npublic class SecurityConfig extends WebSecurityConfigurerAdapter {\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http.authorizeRequests()\n            .antMatchers(\"/public/**\").permitAll()\n            .anyRequest().authenticated()\n            .and()\n            .formLogin();\n    }\n}\n```\n\nBu sayede, belirli URL'lere erişim kontrolü sağlanabilir ve kullanıcı kimlik doğrulaması yapılabilir."
+    }, 
+    {
+        "id": 155,
+        "question": "Java'da Spring Boot uygulamasında hata yönetimi nasıl yapılır?",
+        "answer": "Java'da Spring Boot uygulamasında hata yönetimi için `@ControllerAdvice` anotasyonu kullanılır. Bu anotasyon, tüm kontrolcülerdeki hataları yakalamak ve işlemek için merkezi bir hata işleyici sağlar. Örneğin: \n\n```java\n@ControllerAdvice\npublic class GlobalExceptionHandler {\n    @ExceptionHandler(ResourceNotFoundException.class)\n    public ResponseEntity<String> handleResourceNotFound(ResourceNotFoundException ex) {\n        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());\n    }\n}\n```\n\nBu sayede, belirli istisnalar için özel hata mesajları döndürülebilir ve kullanıcı deneyimi iyileştirilebilir."
+    },  
+    {
+        "id": 156,
+        "question": "@Autowired anotasyonu nedir ve nasıl kullanılır?",
+        "answer": "@Autowired anotasyonu, Spring Framework'te bağımlılık enjeksiyonunu otomatik olarak gerçekleştirmek için kullanılır. Bu anotasyon, bir bean'in başka bir bean'e enjekte edilmesini sağlar. Örneğin, bir servis sınıfını bir kontrolcüde enjekte etmek için şu şekilde kullanılabilir: \n\n```java\n@RestController\npublic class MyController {\n    @Autowired\n    private MyService myService;\n\n    // ... diğer metodlar\n}\n```\n\nBu sayede, `myService` bean'i otomatik olarak enjekte edilir ve kullanılabilir hale gelir."
+    },
+    {
+        "id": 157,
+        "question": "Controller ile Service arasındaki fark nedir?",
+        "answer": "Controller, kullanıcı isteklerini işleyen ve uygun yanıtları döndüren bir bileşendir. Genellikle HTTP isteklerini alır ve işleme alır. Service ise, iş mantığını içeren ve veri erişim işlemlerini yöneten bir bileşendir. Controller, Service katmanını kullanarak iş mantığını uygular ve sonuçları kullanıcıya iletir. Bu ayrım, kodun daha modüler ve bakımı kolay olmasını sağlar."
+    },
+    {
+        "id": 158,
+        "question": "Solid prensipleri nelerdir?",
+        "answer": "SOLID prensipleri, yazılım tasarımında beş temel prensibi ifade eder: \n\n1. **Single Responsibility Principle (SRP)**: Bir sınıfın sadece bir sorumluluğu olmalıdır. \n2. **Open/Closed Principle (OCP)**: Sınıflar genişletilebilir olmalı ancak değiştirilemez olmalıdır. \n3. **Liskov Substitution Principle (LSP)**: Alt sınıflar, üst sınıfların yerine kullanılabilmelidir. \n4. **Interface Segregation Principle (ISP)**: Kullanıcılar, kullanmadıkları metodları içeren arayüzlere bağlı olmamalıdır. \n5. **Dependency Inversion Principle (DIP)**: Yüksek seviyeli modüller, düşük seviyeli modüllere bağımlı olmamalıdır; her ikisi de soyutlamalara bağımlı olmalıdır."
+    },
+    {
+        "id": 159,
+        "question": "Value objects ve Reference objects arasındaki fark nedir?",
+        "answer": "Value objects, değerleri temsil eden ve genellikle değiştirilemez (immutable) olan nesnelerdir. Bu nesneler, eşitliklerini değerlerine göre belirlerler. Örneğin, bir `Point` sınıfı (x, y koordinatları) bir value object olabilir. Reference objects ise, bellek adresine dayalı olarak referans edilen nesnelerdir ve genellikle değiştirilebilir (mutable) olabilirler. Eşitlikleri, referanslarına göre belirlenir. Örneğin, bir `User` sınıfı bir reference object olabilir."
+    },
+    {
+        "id": 160,
+        "question": "SQL'de indexleme nedir?",
+        "answer": "SQL'de indexleme, veritabanı tablolarındaki verilere hızlı erişim sağlamak için kullanılan bir tekniktir. Indexler, belirli sütunlar üzerinde oluşturulan veri yapılarıdır ve sorguların performansını artırır. Indexler, verilerin sıralanmasını ve arama işlemlerinin hızlanmasını sağlar. Ancak, indexler ek bellek kullanımı gerektirir ve veri ekleme/silme işlemlerinde performansı etkileyebilir. Bu nedenle, hangi sütunlarda index oluşturulacağı dikkatlice seçilmelidir."
+    }
+    
+
+
+
+    
+
 ]
