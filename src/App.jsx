@@ -25,6 +25,16 @@ function App() {
     }
   };
 
+  const handleRandom = () => {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * questions.length);
+    } while (randomIndex === currentIndex && questions.length > 1);
+    setDirection(0);
+    setCurrentIndex(randomIndex);
+    setShowAnswer(false);
+  }
+
   const variants = {
     enter: (direction) => ({
       x: direction > 0 ? 300 : -300,
@@ -77,7 +87,8 @@ function App() {
               ></div>
             </div>
 
-            <div className="flex items-center justify-center gap-4">
+            {/* Soru sayısı ve random butonu */}
+            <div className="flex items-center justify-center gap-4 mb-6">
               <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
@@ -92,6 +103,17 @@ function App() {
                 className="bg-orange-300 hover:bg-orange-400 disabled:opacity-50 text-white px-4 py-2 rounded-full"
               >
                 →
+              </button>
+            </div>
+
+            {/* Zar ikonlu random buton */}
+            <div className="flex justify-center">
+              <button
+                onClick={handleRandom}
+                className="mx-auto bg-orange-400 hover:bg-orange-200 text-white px-5 py-2 rounded-full shadow transition flex items-center gap-2 text-lg"
+                title="Rastgele Soru"
+              >
+                <span role="img" aria-label="dice">🎲</span>
               </button>
             </div>
           </motion.div>
