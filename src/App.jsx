@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center px-4 overflow-hidden">
-      <div className="relative w-full max-w-md h-[400px]">
+      <div className="relative w-full max-w-md min-h-[400px] max-h-[90vh]">
         <AnimatePresence custom={direction} mode="wait">
           <motion.div
             key={currentIndex}
@@ -62,7 +62,7 @@ function App() {
             animate="center"
             exit="exit"
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="absolute top-0 left-0 w-full h-full bg-white rounded-3xl shadow-xl p-8 text-center"
+            className="absolute top-0 left-0 w-full h-auto min-h-[400px] max-h-[90vh] bg-white rounded-3xl shadow-xl p-8 text-center flex flex-col overflow-y-auto"
           >
             <h1 className="text-2xl font-bold mb-4 text-blue-900">Full-Stack</h1>
             <p className="text-lg font-semibold text-gray-800 mb-6">{currentQuestion.question}</p>
@@ -72,7 +72,7 @@ function App() {
             ) : (
               <button
                 onClick={() => setShowAnswer(true)}
-                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition mb-6"
+                className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition mb-6"
               >
                 Show Answer
               </button>
