@@ -793,6 +793,11 @@
         "id": 160,
         "question": "SQL'de indexleme nedir?",
         "answer": "SQL'de indexleme, veritabanı tablolarındaki verilere hızlı erişim sağlamak için kullanılan bir tekniktir. Indexler, belirli sütunlar üzerinde oluşturulan veri yapılarıdır ve sorguların performansını artırır. Indexler, verilerin sıralanmasını ve arama işlemlerinin hızlanmasını sağlar. Ancak, indexler ek bellek kullanımı gerektirir ve veri ekleme/silme işlemlerinde performansı etkileyebilir. Bu nedenle, hangi sütunlarda index oluşturulacağı dikkatlice seçilmelidir."
+    },
+    {
+        "id": 161,
+        "question": "API nedir ne işe yarar?",
+        "answer": "API (Application Programming Interface), farklı yazılım bileşenleri arasında iletişim kurmayı sağlayan bir arayüzdür. API'ler, uygulamaların birbirleriyle veri alışverişi yapmasına ve işlevselliklerini paylaşmasına olanak tanır. Örneğin, bir web uygulaması, harita hizmeti API'sini kullanarak harita verilerini alabilir veya bir ödeme sistemi API'si aracılığıyla ödeme işlemlerini gerçekleştirebilir. API'ler, yazılım geliştirmeyi kolaylaştırır ve sistemler arası entegrasyonu sağlar."
     }
     
 
