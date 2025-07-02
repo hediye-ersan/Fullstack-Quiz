@@ -18,7 +18,11 @@ Kategorilere ayrılmış sorular arasında ileri/geri geçiş yaparak çalışma
 
 ---
 
-## 🖼️ Uygulama Linki
+## Uygulama Linki
 https://fullstack-quiz-five.vercel.app/
+
+## 🖼️ Uygulama Ekran Resmi
+
+![Uygulama Ekran Görüntüsü](public/quiz.png)
 
 
