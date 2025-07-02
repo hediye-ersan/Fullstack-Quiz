@@ -1,12 +1,24 @@
-# React + Vite
+# 🎓 Mülakat Hazırlık Kartları
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React tabanlı bu uygulama, Full Stack Developer mülakatlarına hazırlanan geliştiriciler için sıkça sorulan teknik soruları sade ve etkili bir kart sistemiyle sunar.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Proje Özeti
 
-## Expanding the ESLint configuration
+Kategorilere ayrılmış sorular arasında ileri/geri geçiş yaparak çalışmayı kolaylaştıran bu uygulama sayesinde mülakatlara her an her yerden hazırlanabilirsiniz. Basit tasarımı ve işlevsel yapısı ile kullanıcı dostudur.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 Özellikler
+
+- 🔄 **İleri/Geri Navigasyon:** Sorular arasında gezinme
+- 👁 **Cevabı Göster/Gizle:** Önce düşün, sonra kontrol et
+- 📱 **Mobil Uyumlu Tasarım:** Tüm cihazlarda sorunsuz kullanım
+
+---
+
+## 🖼️ Uygulama Linki
+https://fullstack-quiz-five.vercel.app/
+
+
